@@ -1,5 +1,21 @@
+import { useParams } from 'react-router-dom'
+import posts from '../data/mockData'
+import { useNavigate } from 'react-router-dom'
+
 function BoardDetail() {
-  return <div>게시판 상세</div>;
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const post = posts.find((p) => p.id === Number(id))
+
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <p>{post.writer}</p>
+      <p>{post.content}</p>
+      <button onClick={() => navigate('/')}>삭제</button>
+    </div>
+    
+  )
 }
 
-export default BoardDetail;
+export default BoardDetail
