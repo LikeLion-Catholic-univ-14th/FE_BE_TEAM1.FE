@@ -3,6 +3,7 @@ import BoardList from './pages/BoardList';
 import BoardWrite from './pages/BoardWrite';
 import BoardDetail from './pages/BoardDetail';
 import BoardEdit from './pages/BoardEdit';
+import './App.css'
 
 function App() {
   return (

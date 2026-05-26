@@ -1,0 +1,365 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #f5f5f5;
+    color: #191919;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* ───── 공통 페이지 래퍼 ───── */
+  .page {
+    max-width: 960px;  /* 480px → 960px */
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #fff;
+    padding: 0 0 40px;
+  }
+  
+  /* ───── 헤더 ───── */
+  .page-header {
+    padding: 24px 20px 16px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .page-header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #191919;
+    margin-bottom: 4px;
+  }
+  
+  .page-header p {
+    font-size: 14px;
+    color: #8b95a1;
+  }
+  
+  /* ───── 파란 버튼 ───── */
+  .btn-primary {
+    width: 100%;
+    background: #3182F6;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  
+  .btn-primary:hover {
+    background: #1b6de0;
+  }
+  
+  .btn-primary:active {
+    background: #1259c4;
+    transform: scale(0.99);
+  }
+  
+  /* ───── 보조 버튼 ───── */
+  .btn-secondary {
+    width: 100%;
+    background: #fff;
+    color: #3182F6;
+    border: 1px solid #3182F6;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  
+  .btn-secondary:hover {
+    background: #f0f6ff;
+  }
+  
+  /* ───── 위험 버튼 (삭제) ───── */
+  .btn-danger {
+    width: 100%;
+    background: #fff;
+    color: #f03e3e;
+    border: 1px solid #f03e3e;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  
+  .btn-danger:hover {
+    background: #fff5f5;
+  }
+  
+  /* ───── 버튼 그룹 ───── */
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+    margin-top: 16px;
+  }
+  
+  /* ───── 글쓰기 버튼 영역 ───── */
+  .write-btn-wrap {
+    padding: 16px 20px;
+  }
+  
+  /* ───── 섹션 라벨 ───── */
+  .section-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #8b95a1;
+    padding: 0 20px;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+  
+ /* ───── 카드 리스트 그리드 ───── */
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px 20px;
+  }
+  
+  /* ───── 카드 ───── */
+  .card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px;
+  }
+  
+  .card:hover {
+    border-color: #d0d0d0;
+  }
+  
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #191919;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  
+  .card-preview {
+    font-size: 13px;
+    color: #8b95a1;
+    line-height: 1.6;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #f5f5f5;
+  }
+  
+  .card-writer {
+    font-size: 12px;
+    color: #8b95a1;
+    font-weight: 500;
+  }
+  
+  /* ───── 폼 영역 ───── */
+  .form-wrap {
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #191919;
+  }
+  
+  .form-input {
+    width: 100%;
+    border: 1.5px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 15px;
+    color: #191919;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.15s;
+    font-family: inherit;
+  }
+  
+  .form-input:focus {
+    border-color: #3182F6;
+  }
+  
+  .form-input::placeholder {
+    color: #c8d1db;
+  }
+  
+  .form-textarea {
+    width: 100%;
+    border: 1.5px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 15px;
+    color: #191919;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.15s;
+    resize: none;
+    min-height: 200px;
+    font-family: inherit;
+    line-height: 1.6;
+  }
+  
+  .form-textarea:focus {
+    border-color: #3182F6;
+  }
+  
+  .form-textarea::placeholder {
+    color: #c8d1db;
+  }
+  
+  /* ───── 상세 페이지 ───── */
+  .detail-wrap {
+    padding: 24px 20px;
+  }
+  
+  .detail-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #191919;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  
+  .detail-meta {
+    font-size: 14px;
+    color: #8b95a1;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .detail-content {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+  
+  /* ───── 로딩 ───── */
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 15px;
+    color: #8b95a1;
+  }
+  
+  /* ───── 명언 오버레이 ───── */
+  .quote-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #3182F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 32px;
+    cursor: pointer;
+    z-index: 100;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .quote-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  
+  .quote-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 48px;
+  }
+  
+  .quote-hint {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* ───── 뒤로가기 버튼 ───── */
+  .back-btn {
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #3182F6;
+    cursor: pointer;
+    padding: 16px 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .back-btn:hover {
+    color: #1b6de0;
+  }
+
+  .btn-small {
+    background: #3182F6;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .btn-small:hover {
+    background: #1b6de0;
+  }

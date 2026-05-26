@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
-const BASE_URL = "http://여기에백엔드주소"
+const BASE_URL = "http://54.252.57.70:8080"
 
 function BoardEdit() {
   const { id } = useParams()
@@ -28,17 +28,32 @@ function BoardEdit() {
   }
 
   return (
-    <div>
-      <h1>글 수정</h1>
-      <input
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <textarea
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-      />
-      <button onClick={handleEdit}>수정완료</button>
+    <div className="page">
+      <button className="back-btn" onClick={() => navigate(`/detail/${id}`)}>← 돌아가기</button>
+      <div className="page-header">
+        <h1>글 수정</h1>
+      </div>
+      <div className="form-wrap">
+        <div className="form-field">
+          <label className="form-label">제목</label>
+          <input
+            className="form-input"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="제목을 입력하세요"
+          />
+        </div>
+        <div className="form-field">
+          <label className="form-label">내용</label>
+          <textarea
+            className="form-textarea"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            placeholder="내용을 입력하세요"
+          />
+        </div>
+        <button className="btn-primary" onClick={handleEdit}>수정완료</button>
+      </div>
     </div>
   )
 }

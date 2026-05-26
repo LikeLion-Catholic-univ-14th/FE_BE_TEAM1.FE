@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import mockData from '../data/mockData'
 
-const BASE_URL = "http://여기에백엔드주소"
+const BASE_URL = "http://54.252.57.70:8080"
 
 function BoardList() {
   const navigate = useNavigate()
@@ -16,14 +16,27 @@ function BoardList() {
   }, [])
 
   return (
-    <div>
-      <h1>게시판 목록</h1>
-      <button onClick={() => navigate('/write')}>글쓰기</button>
-      {posts.map((post) => (
-        <div key={post.id} onClick={() => navigate(`/detail/${post.id}`)}>
-          {post.title} - {post.writer}
+    <div className="page">
+      <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div>
+          <h1>게시판</h1>
+          <p>자유롭게 글을 작성해보세요</p>
         </div>
-      ))}
+        <button className="btn-small" onClick={() => navigate('/write')}>글쓰기</button>
+      </div>
+      <div className="card-list">
+        {posts.map((post) => (
+          <div key={post.id} className="card" onClick={() => navigate(`/detail/${post.id}`)}>
+            <div>
+              <div className="card-title">{post.title}</div>
+              <div className="card-preview">{post.content}</div>
+            </div>
+            <div className="card-footer">
+              <span className="card-writer">by {post.writer}</span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-const BASE_URL = "http://여기에백엔드주소"
+const BASE_URL = "http://54.252.57.70:8080"
 
 function BoardDetail() {
   const { id } = useParams()
@@ -22,16 +22,20 @@ function BoardDetail() {
     navigate('/')
   }
 
-  if (!post) return <p>로딩중...</p>
+  if (!post) return <p className="loading">로딩중...</p>
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>{post.writer}</p>
-      <p>{post.content}</p>
-      <button onClick={handleDelete}>삭제</button>
-      <button onClick={() => navigate(`/edit/${id}`)}>수정</button>
-      <button onClick={handleDelete}>삭제</button>
+    <div className="page">
+      <button className="back-btn" onClick={() => navigate('/')}>← 목록으로</button>
+      <div className="detail-wrap">
+        <h1 className="detail-title">{post.title}</h1>
+        <p className="detail-meta">{post.writer}</p>
+        <p className="detail-content">{post.content}</p>
+      </div>
+      <div className="btn-group">
+        <button className="btn-secondary" onClick={() => navigate(`/edit/${id}`)}>수정</button>
+        <button className="btn-danger" onClick={handleDelete}>삭제</button>
+      </div>
     </div>
   )
 }
