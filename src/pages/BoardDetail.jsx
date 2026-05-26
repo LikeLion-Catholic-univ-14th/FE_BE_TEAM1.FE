@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-const BASE_URL = "http://54.252.57.70:8080"
+const BASE_URL = "/api"
 
 function BoardDetail() {
   const { id } = useParams()

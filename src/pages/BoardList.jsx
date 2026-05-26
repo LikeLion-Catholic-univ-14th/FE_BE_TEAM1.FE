@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import mockData from '../data/mockData'
 
-const BASE_URL = "http://54.252.57.70:8080"
+const BASE_URL = "/api"
 
 function BoardList() {
   const navigate = useNavigate()

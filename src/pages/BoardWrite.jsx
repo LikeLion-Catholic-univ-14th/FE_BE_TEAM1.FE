@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const BASE_URL = "http://54.252.57.70:8080"
+const BASE_URL = "/api"
 
 function BoardWrite() {
   const [title, setTitle] = useState('');
